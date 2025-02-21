@@ -1,18 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\GameController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/', [PlayerController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('players', PlayerController::class);
+Route::resource('matches', GameController::class);
+
+Route::get('/matches', [GameController::class, 'index'])->name('matches.index');
+Route::post('/matches/generate', [GameController::class, 'generateMatches'])->name('matches.generate');
+Route::get('/matches/{match}/edit', [GameController::class, 'edit'])->name('matches.edit');
+Route::post('/matches', [GameController::class, 'store'])->name('matches.store');
