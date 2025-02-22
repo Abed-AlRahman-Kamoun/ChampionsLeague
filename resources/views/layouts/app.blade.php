@@ -35,38 +35,28 @@
         } */
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen">
     <!-- Navigation -->
     <nav class="champions-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center gap-4">
-
                     <div class="text-2xl font-bold text-white">
-                        FC25 Champions League
+                        FC25
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="{{ route('home') }}" class="text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium">League Table</a>
+                    <a href="{{ route('home') }}" class="text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium">Table</a>
                     <a href="{{ route('matches.index') }}" class="text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium">Matches</a>
-                    <a href="{{ route('players.create') }}" class="text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium">Add Player</a>
+                    <a href="{{ route('players.create') }}" class="text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium">Players</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="flex-1  mx-auto px-4 sm:px-6 lg:px-8 py-8">
         @yield('content')
     </main>
-
-    <!-- Footer -->
-    {{-- <footer class="champions-gradient mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="text-center text-sm text-blue-200">
-                © {{ date('Y') }} FC25 Champions League. All rights reserved.
-            </div>
-        </div>
-    </footer> --}}
 </body>
 </html>
